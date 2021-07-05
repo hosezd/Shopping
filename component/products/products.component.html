@@ -1,0 +1,27 @@
+<h4>Vehicles shopping store</h4>
+
+<select (change)="filterItems($event)">
+  <option>Minivan</option>
+  <option>Coupe</option>
+  <option>Hatchback</option>
+  <option>Van</option>
+</select>
+<div class="row">
+  <ng-container *ngFor="let item of productList">
+    <div class="card col-md-3">
+      <img src="{{ item.image }}" alt="" />
+      <h5>
+        {{ item.Id }}
+      </h5>
+      <h5>
+        {{ item.title }}
+      </h5>
+      <p><strong>Price:</strong> ${{ item.price }}</p>
+      <button class="btn btn-primary" (click)="addtocart(item)">
+        Add to cart
+      </button>
+      <br />
+      <button (click)="setFavorite(item)">Yes</button>
+    </div>
+  </ng-container>
+</div>
